@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import <GooglePlus/GooglePlus.h>
+#import <GoogleOpenSource/GoogleOpenSource.h>
 
 @interface AppDelegate ()
 
@@ -17,8 +20,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+    signIn.clientID= @"36604025628-pt4o8dj64356e5k3lck31d4gjap40a2h.apps.googleusercontent.com";
+    signIn.scopes = @[@"profile"];
+    // Override point for customization after application launch.
+    [FBLoginView class];
     return YES;
 }
+- (BOOL)application: (UIApplication *)application
+            openURL: (NSURL *)url
+  sourceApplication: (NSString *)sourceApplication
+         annotation: (id)annotation {
+    //BOOL washandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    return [FBSession.activeSession handleOpenURL:url];
+    if ([GPPURLHandler handleURL:url
+               sourceApplication:sourceApplication
+                      annotation:annotation]){
+        return YES;
+        //return washandled;
+    }
+    return NO;
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -36,6 +61,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBAppCall handleDidBecomeActive];
+
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
