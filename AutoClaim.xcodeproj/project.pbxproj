@@ -56,6 +56,7 @@
 		4208C4831A9EBDC3008F041A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4208C4821A9EBDC2008F041A /* UIKit.framework */; };
 		4208C4851A9EBDCA008F041A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4208C4841A9EBDCA008F041A /* Foundation.framework */; };
 		4208C4871A9EBDD3008F041A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4208C4861A9EBDD3008F041A /* CoreGraphics.framework */; };
+		42C5C5B01AB725E6005D7BB1 /* addPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C5C5AF1AB725E6005D7BB1 /* addPhotosViewController.m */; };
 		42D4DDBF1AA5566D00AD36A9 /* HSDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D4DDBD1AA5566D00AD36A9 /* HSDatePickerViewController.m */; };
 		42D4DDC01AA5566D00AD36A9 /* HSDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D4DDBE1AA5566D00AD36A9 /* HSDatePickerViewController.xib */; };
 		42D4DDD11AA69DFE00AD36A9 /* DriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D4DDD01AA69DFE00AD36A9 /* DriverViewController.m */; };
@@ -181,6 +182,8 @@
 		4208C4821A9EBDC2008F041A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4208C4841A9EBDCA008F041A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4208C4861A9EBDD3008F041A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		42C5C5AE1AB725E6005D7BB1 /* addPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addPhotosViewController.h; sourceTree = "<group>"; };
+		42C5C5AF1AB725E6005D7BB1 /* addPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addPhotosViewController.m; sourceTree = "<group>"; };
 		42D4DDBC1AA5566D00AD36A9 /* HSDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDatePickerViewController.h; sourceTree = "<group>"; };
 		42D4DDBD1AA5566D00AD36A9 /* HSDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDatePickerViewController.m; sourceTree = "<group>"; };
 		42D4DDBE1AA5566D00AD36A9 /* HSDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSDatePickerViewController.xib; sourceTree = "<group>"; };
@@ -369,6 +372,8 @@
 				42D4DDDB1AA8C6FD00AD36A9 /* PersonalInjuryViewController.m */,
 				42D4DF4F1AAB709900AD36A9 /* faceViewController.h */,
 				42D4DF501AAB709900AD36A9 /* faceViewController.m */,
+				42C5C5AE1AB725E6005D7BB1 /* addPhotosViewController.h */,
+				42C5C5AF1AB725E6005D7BB1 /* addPhotosViewController.m */,
 				4208C39F1A9BC3B5008F041A /* Main.storyboard */,
 				4208C40B1A9D9197008F041A /* Login 2 */,
 				4208C3A21A9BC3B5008F041A /* Images.xcassets */,
@@ -725,6 +730,7 @@
 				4208C3BD1A9BD4C3008F041A /* SigninViewController.m in Sources */,
 				42D4E0601AAFD96B00AD36A9 /* OADataFetcher.m in Sources */,
 				4208C39E1A9BC3B5008F041A /* ViewController.m in Sources */,
+				42C5C5B01AB725E6005D7BB1 /* addPhotosViewController.m in Sources */,
 				4208C39B1A9BC3B4008F041A /* AppDelegate.m in Sources */,
 				42D4E0651AAFD96B00AD36A9 /* OARequestParameter.m in Sources */,
 				4208C3981A9BC3B4008F041A /* main.m in Sources */,

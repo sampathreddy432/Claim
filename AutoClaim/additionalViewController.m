@@ -15,7 +15,7 @@
 @end
 
 @implementation additionalViewController
-@synthesize photos , details, review, information;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
    
@@ -116,13 +116,13 @@
 
 
 - (IBAction)segment:(UISegmentedControl *)sender {
-    switch (sender.selectedSegmentIndex) {
+   /* switch (sender.selectedSegmentIndex) {
         case 0:
-            self.information.hidden = NO;
-            self.photos.hidden = YES;
-            self.review.hidden = YES;
-            self.details.hidden = YES;
-            break;
+            [UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil]];
+            UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"PhotosViewController"];
+            [self presentViewController:vc animated:YES completion:nil];
+
+                        break;
         case 1:
             self.information.hidden = YES;
             self.photos.hidden = NO;
@@ -144,7 +144,56 @@
             break;
         default:
             break;
+    }*/
+    
+    
+    
+    if(sender.selectedSegmentIndex == 0)            // Checking which segment is selected using the segment index value
+        
+    {
+        
+        //self.view.backgroundColor = [UIColor redColor];          // Change the background color to red
+        
     }
+    
+    else
+        
+        if(sender.selectedSegmentIndex == 1)
+            
+        {
+            
+            //self.view.backgroundColor = [UIColor greenColor];
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"PhotosViewController"];
+            [self presentViewController:vc animated:YES completion:nil];
+            
+        }
+    
+        else
+            
+            if(sender.selectedSegmentIndex == 2)
+                
+            {
+                
+                //self.view.backgroundColor = [UIColor blueColor];
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+                [self presentViewController:vc animated:YES completion:nil];
+
+            }
+            else
+                
+                if(sender.selectedSegmentIndex == 3)
+                    
+                {
+                    
+                    //self.view.backgroundColor = [UIColor blueColor];
+                    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"SubmitViewController"];
+                    [self presentViewController:vc animated:YES completion:nil];
+                    
+                }
+
 
     
 }

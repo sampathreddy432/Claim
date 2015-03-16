@@ -49,7 +49,7 @@
     
     [UIView commitAnimations];
    */
-    self.imgeview.frame = CGRectMake(67, 900, 240, 165);
+    /*self.imgeview.frame = CGRectMake(67, 900, 240, 165);
     [UIView animateWithDuration:0.9
                           delay:0.1
                         options: UIViewAnimationCurveEaseIn
@@ -60,6 +60,22 @@
                      }];
     [self.view addSubview:self.imgeview];
     }
+     */
+    [UIView animateWithDuration:2.0f animations:^{
+        
+        [_btnn setAlpha:0.0f];
+        
+    } completion:^(BOOL finished) {
+        
+        //fade out
+        [UIView animateWithDuration:2.0f animations:^{
+            
+            [_btnn setAlpha:1.0f];
+            
+        } completion:nil];
+        
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

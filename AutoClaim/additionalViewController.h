@@ -14,12 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *additional;
 - (IBAction)additional:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *information;
-
-@property (weak, nonatomic) IBOutlet UIView *photos;
-
-@property (weak, nonatomic) IBOutlet UIView *details;
-
-@property (weak, nonatomic) IBOutlet UIView *review;
 - (IBAction)segment:(id)sender;
 
 @end
