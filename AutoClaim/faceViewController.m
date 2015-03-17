@@ -14,8 +14,8 @@ NSString *callback = @"http://codegerms.com/callback";
 @end
 
 @implementation faceViewController
-@synthesize webview, isLogin,accessToken;
-- (void)viewDidLoad {
+//@synthesize webview, isLogin,accessToken;
+/*- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     consumer = [[OAConsumer alloc] initWithKey:client_id secret:secret realm:nil];
@@ -38,7 +38,7 @@ NSString *callback = @"http://codegerms.com/callback";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
+}*/
 
 /*
  #pragma mark - Navigation
@@ -48,7 +48,7 @@ NSString *callback = @"http://codegerms.com/callback";
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
  }
- */
+ 
 - (void)didReceiveRequestToken:(OAServiceTicket*)ticket data:(NSData*)data {
     NSString* httpBody = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     requestToken = [[OAToken alloc] initWithHTTPResponseBody:httpBody];
@@ -87,7 +87,7 @@ NSString *callback = @"http://codegerms.com/callback";
                               otherButtonTitles:nil];
     [alertView show];
     
-    */
+ 
 }
 
 - (void)didFailOAuth:(OAServiceTicket*)ticket error:(NSError*)error {
@@ -148,7 +148,7 @@ NSString *callback = @"http://codegerms.com/callback";
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     // [indicator stopAnimating];
 }
-
+*/
 
 
 

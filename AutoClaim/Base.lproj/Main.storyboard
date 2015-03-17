@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jzE-xe-ATB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jzE-xe-ATB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Deals-->
@@ -386,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ag-c0-QSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="508" y="-273"/>
+            <point key="canvasLocation" x="443" y="-547"/>
         </scene>
         <!--Driver View Controller-->
         <scene sceneID="hV1-7c-dhY">
@@ -656,8 +656,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ground.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9vu-1a-rF1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="680"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9vu-1a-rF1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZc-gH-l9P">
                                 <rect key="frame" x="84" y="201" width="207" height="165"/>
@@ -665,7 +665,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cTC-d0-OzG" kind="modal" id="pJ2-8B-gci"/>
+                                    <segue destination="cTC-d0-OzG" kind="modal" id="6JE-6f-kVq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -678,12 +678,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmm-79-kPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-748" y="-49"/>
+            <point key="canvasLocation" x="-811" y="-82"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="bTr-4d-yS9">
             <objects>
-                <viewController id="cTC-d0-OzG" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="cTC-d0-OzG" customClass="SignupViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NKY-Rb-fZq"/>
                         <viewControllerLayoutGuide type="bottom" id="dXu-pp-JnI"/>
@@ -692,7 +692,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Aq3-49-7Xc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Aq3-49-7Xc">
                                 <rect key="frame" x="0.0" y="0.0" width="380" height="679"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                             </imageView>
@@ -717,13 +717,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="backgroundimage" destination="Aq3-49-7Xc" id="bMR-sm-IxB"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="zbh-Z8-jqb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haW-lm-KxO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-371" y="-32"/>
+            <point key="canvasLocation" x="-387" y="-82"/>
         </scene>
         <!--Signin View Controller-->
         <scene sceneID="eML-xb-T8d">
@@ -737,7 +735,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zTx-tR-apC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="zTx-tR-apC">
                                 <rect key="frame" x="0.0" y="-5" width="375" height="680"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97n-ki-i8M">
@@ -745,51 +743,15 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <action selector="email:" destination="OOa-91-k94" eventType="editingDidEndOnExit" id="yCb-hf-tHD"/>
-                                    <action selector="signin:" destination="OOa-91-k94" eventType="editingDidEndOnExit" id="2Jc-Sh-SRz"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BUA-df-4lt">
                                 <rect key="frame" x="74" y="464" width="227" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <action selector="password:" destination="OOa-91-k94" eventType="editingDidEndOnExit" id="I3N-Ia-Why"/>
-                                    <action selector="signin:" destination="OOa-91-k94" eventType="editingDidEndOnExit" id="tqi-m1-PNc"/>
-                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZ2-S2-wA2">
-                                <rect key="frame" x="74" y="311" width="227" height="38"/>
-                                <state key="normal" title="Button" image="btn_google.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btn:" destination="OOa-91-k94" eventType="touchUpInside" id="PTF-hf-mdk"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="or_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Kz-fa-5vM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Kz-fa-5vM">
                                 <rect key="frame" x="74" y="409" width="227" height="7"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBq-GN-rqC">
-                                <rect key="frame" x="240" y="570" width="61" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="signup:" destination="OOa-91-k94" eventType="touchUpInside" id="FwY-ho-Mqd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npD-XO-HRO">
-                                <rect key="frame" x="74" y="357" width="227" height="38"/>
-                                <state key="normal" title="Button" image="btn_twitter.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ZQr-EO-OWP" kind="modal" id="qDw-8C-d6F"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PUV-1M-sqc">
                                 <rect key="frame" x="74" y="502" width="227" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -802,29 +764,37 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="signin:" destination="OOa-91-k94" eventType="touchUpInside" id="oGu-97-swm"/>
-                                </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJR-e2-v0a" customClass="FBLoginView">
-                                <rect key="frame" x="74" y="265" width="227" height="38"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoZ-aS-MoL">
+                                <rect key="frame" x="10" y="174" width="300" height="45"/>
+                                <state key="normal" title="Button" image="btn_fb.fw.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvZ-Si-Cv2">
+                                <rect key="frame" x="10" y="227" width="300" height="45"/>
+                                <state key="normal" title="Button" image="btn_twitter.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIO-wI-uC6" customClass="GPPSignInButton">
+                                <rect key="frame" x="10" y="280" width="300" height="45"/>
+                                <state key="normal" title="Button" image="btn_google.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="btn" destination="HZ2-S2-wA2" id="A4p-G3-wCk"/>
-                        <outlet property="confirm" destination="PUV-1M-sqc" id="e5K-c5-fey"/>
-                        <outlet property="email" destination="97n-ki-i8M" id="PRU-fC-A42"/>
-                        <outlet property="password" destination="BUA-df-4lt" id="IVz-y3-Dgo"/>
-                        <outlet property="signin" destination="NfQ-dv-fnh" id="4on-ip-P8B"/>
-                        <outlet property="signup" destination="yBq-GN-rqC" id="I4Y-Fs-Jsq"/>
+                        <outlet property="facebookButton" destination="yoZ-aS-MoL" id="sIw-dw-dze"/>
+                        <outlet property="googleButton" destination="kIO-wI-uC6" id="6cz-yw-cvV"/>
+                        <outlet property="twitterButton" destination="LvZ-Si-Cv2" id="Qqu-k0-6Nz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RY-id-qBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="-75"/>
+            <point key="canvasLocation" x="32" y="-82"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="91A-ha-Kna">
@@ -899,17 +869,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back.jpg" width="750" height="1334"/>
+        <image name="background" width="375" height="667"/>
         <image name="background.jpg" width="750" height="1334"/>
         <image name="body-image.png" width="482" height="445"/>
+        <image name="btn_fb.fw.png" width="490" height="78"/>
         <image name="btn_google.png" width="490" height="78"/>
         <image name="btn_signup_active.png" width="675" height="110"/>
         <image name="btn_skip.png" width="675" height="110"/>
         <image name="btn_twitter.png" width="490" height="78"/>
-        <image name="ground.jpg" width="750" height="1334"/>
-        <image name="loading.jpg" width="750" height="1334"/>
-        <image name="logo.png" width="376" height="267"/>
-        <image name="or_line.png" width="490" height="13"/>
+        <image name="logo.png" width="500" height="357"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

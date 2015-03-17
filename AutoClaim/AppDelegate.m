@@ -10,6 +10,8 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <GooglePlus/GooglePlus.h>
 #import <GoogleOpenSource/GoogleOpenSource.h>
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
 
 @interface AppDelegate ()
 
@@ -17,14 +19,14 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    GPPSignIn *signIn = [GPPSignIn sharedInstance];
-    signIn.clientID= @"36604025628-pt4o8dj64356e5k3lck31d4gjap40a2h.apps.googleusercontent.com";
-    signIn.scopes = @[@"profile"];
-    // Override point for customization after application launch.
-    [FBLoginView class];
+    [Fabric with:@[TwitterKit]];
+    
+    [FBAppEvents activateApp];
+    
+    [[GPPSignIn sharedInstance] setClientID:@"705935661686-lgsbcqgebgk4k7b4qo67ahorgv1mh9ei.apps.googleusercontent.com"];
+    
     return YES;
 }
 - (BOOL)application: (UIApplication *)application
@@ -33,16 +35,27 @@
          annotation: (id)annotation {
     //BOOL washandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
     
-    return [FBSession.activeSession handleOpenURL:url];
-    if ([GPPURLHandler handleURL:url
-               sourceApplication:sourceApplication
-                      annotation:annotation]){
-        return YES;
-        //return washandled;
+    NSLog(@"%@ %@", [url absoluteString], sourceApplication);
+    if ([[url absoluteString] rangeOfString:@"com.sampath.autoclaim"].location == NSNotFound)
+    {
+        // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+        BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+        // You can add your app-specific url handling code here if needed
+        return wasHandled;
     }
-    return NO;
+    else
+    {
+        
+        NSLog(@"%d", [GPPURLHandler handleURL:url
+                            sourceApplication:sourceApplication
+                                   annotation:annotation]);
+        
+        return [GPPURLHandler handleURL:url
+                  sourceApplication:sourceApplication
+                            annotation:annotation];
+    }
+    return YES;
 }
-
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

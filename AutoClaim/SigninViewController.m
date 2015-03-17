@@ -10,6 +10,8 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import <GooglePlus/GooglePlus.h>
+#import <TwitterKit/TwitterKit.h>
+
 @interface SigninViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *signin;
 
@@ -18,7 +20,55 @@
 @implementation SigninViewController
 @synthesize email;
 @synthesize password;
+@synthesize facebookButton;
+@synthesize googleButton;
+@synthesize twitterButton;
 
+- (void) facebookLoginAction
+{
+    [FBSession openActiveSessionWithReadPermissions:@[@"public_profile", @"user_birthday", @"email"]
+                                       allowLoginUI:YES
+                                  completionHandler:
+     ^(FBSession *session, FBSessionState state, NSError *error) {
+         
+         if (session.state == FBSessionStateOpen)
+         {
+             NSLog(@"token: %@", session.accessTokenData.accessToken);
+             [self loginSuccessAction];
+         }
+     }];
+}
+
+- (void) twitterLoginAction
+{
+    [[Twitter sharedInstance] logInWithCompletion:^
+     (TWTRSession *session, NSError *error) {
+         if (session) {
+             NSLog(@"signed in as %@", [session userName]);
+             
+             [self loginSuccessAction];
+             
+         } else {
+             NSLog(@"error: %@", [error localizedDescription]);
+         }
+     }];
+}
+
+- (void) googlePlusLoginAction
+{
+    NSLog(@"Here");
+    [[GPPSignIn sharedInstance] setDelegate:self];
+    
+    if ([[GPPSignIn sharedInstance] authentication]) {
+
+        // The user is signed in.
+        // Perform other actions here, such as showing a sign-out button
+    } else {
+        // Perform other actions here
+    }
+
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,9 +76,21 @@
     //FBLoginView *loginView = [[FBLoginView alloc] init];
     self.email.delegate = self;
     self.password.delegate = self;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults]; //create instance of NSUSerDefaults
+    
+    [self.facebookButton addTarget:self action:@selector(facebookLoginAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.twitterButton addTarget:self action:@selector(twitterLoginAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.googleButton addTarget:self action:@selector(googlePlusLoginAction) forControlEvents:UIControlEventTouchUpInside];
     
     //if statement to check if there is a registered user or not
+   
+
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults]; //create instance of NSUSerDefaults
     if (![defaults boolForKey:@"registered"]) {
         NSLog(@"No user registered");
         _signin.hidden = YES; //hide login button because no user is regsitered
@@ -37,13 +99,54 @@
         NSLog(@"user is registered");
         _confirm.hidden = YES;
         _signup.hidden = YES;
+        
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"TabViewController"];
+        [self presentViewController:vc animated:YES completion:nil];
     }
-
 }
-- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
+
+- (void) loginSuccessAction
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults]; //create instance of NSUSerDefaults
+    [defaults setObject:email.text forKey:@"username"];
+    [defaults setObject:password.text forKey:@"password"];
+    [defaults setBool:YES forKey:@"registered"];
+    
+    [defaults synchronize];
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"TabViewController"];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+#pragma mark - GPPSignInDelegate
+
+- (void)finishedWithAuth:(GTMOAuth2Authentication *)auth
+                   error:(NSError *)error {
+    
+    if (error) {
+        NSLog(@"%@",
+        [NSString stringWithFormat:@"Status: Authentication error: %@", error]);
+        return;
+    }
+    [self loginSuccessAction];
+    NSLog(@"Here22");
+}
+
+- (void)didDisconnectWithError:(NSError *)error {
+    if (error) {
+        NSLog(@"%@", [NSString stringWithFormat:@"Status: Failed to disconnect: %@", error]);
+    } else {
+        NSLog(@"%@",[NSString stringWithFormat:@"Status: Disconnected"]);
+    }
+}
+
+/*- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
                    error: (NSError *) error {
     NSLog(@"Received error %@ and auth object %@",error, auth);
 }
+
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
     NSLog(@"email address %@",[user objectForKey:@"email"]);
     NSLog(@"Token Return %@",[FBSession activeSession].accessTokenData);
@@ -51,11 +154,11 @@
     UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"TabViewController"];
     [self presentViewController:vc animated:YES completion:nil];
 }
-/*-(void) loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
+-(void) loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
 {
     NSLog(@"%@", user.name);
 }
- */
+ 
 -(void) loginViewShowingLoggedInUser:(FBLoginView *) loginView
 {
     NSLog(@"you are logged in");
@@ -64,7 +167,7 @@
         UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"TabViewController"];
         [self presentViewController:vc animated:YES completion:nil];
     
-}
+}*/
 
 
 
